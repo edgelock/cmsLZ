@@ -1,10 +1,12 @@
 param location string = resourceGroup().location
-
+param region string = 'eus2'
+param environment string = 'dev'
+param suffix string = 'cms'
 @description('The name of the SQL logical server.')
 param serverName string = 'sql-eus2-dev-cms'
 
 @description('The name of the SQL Database.')
-param sqlDBName string = 'sql-db01-eus2-dev-cms'
+param sqlDBName string = 'sql-db01-${region}-${environment}-${suffix}'
 
 @description('The administrator username of the SQL logical server.')
 param administratorLogin string = 'cmssqladmin'
