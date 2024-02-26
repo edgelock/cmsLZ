@@ -1,5 +1,5 @@
 param location string = resourceGroup().location
-param storageAccountName string = 'devcaeaflowst'
+param storageAccountName string = 'steus2devcms001'
 
 resource flowlogStorageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: storageAccountName
