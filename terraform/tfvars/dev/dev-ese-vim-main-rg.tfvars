@@ -17,7 +17,7 @@ vnet_name =  "inv-prod-uan-vnet"
 
 subnets = {  
   "inv-prod-uan-snet001" = {
-    subnet_range                                  = ["10.100.16.0/24"]
+    subnet_range                                  = ["10.100.8.0/24"]
     service_endpoints                             = null
     delegation_name                               = null
     delegation_actions                            = null
@@ -29,7 +29,7 @@ subnets = {
     rt_name                                       = null
   },
 "inv-prod-uan-snet002" = {
-    subnet_range                                  = ["10.100.17.0/24"]
+    subnet_range                                  = ["10.100.9.0/24"]
     service_endpoints                             = null
     delegation_name                               = null
     delegation_actions                            = null
@@ -41,7 +41,7 @@ subnets = {
     rt_name                                       = null
   },
   "inv-prod-uan-snet003" = {
-    subnet_range                                  = ["10.100.18.0/24"]
+    subnet_range                                  = ["10.100.10.0/24"]
     service_endpoints                             = null
     delegation_name                               = null
     delegation_actions                            = null
@@ -53,7 +53,7 @@ subnets = {
     rt_name                                       = null
   },
     "inv-prod-uan-snet004" = {
-    subnet_range                                  = ["10.100.19.0/24"]
+    subnet_range                                  = ["10.100.11.0/24"]
     service_endpoints                             = null
     delegation_name                               = null
     delegation_actions                            = null
