@@ -1,8 +1,11 @@
 @description('Specifies whether to deploy Azure Databricks workspace with Secure Cluster Connectivity (No Public IP) enabled or not')
-param disablePublicIp bool = true
+param disablePublicIp bool = false
 
 @description('The name of the Azure Databricks workspace to create.')
-param workspaceName string = 'dbw-eus2-dev-cms'
+param workspaceName string = 'dbw-${region}-${environment}-${suffix}'
+param region string = 'eus2'
+param environment string = 'dev'
+param suffix string = 'cms'
 
 @description('The pricing tier of workspace.')
 @allowed([

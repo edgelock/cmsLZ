@@ -3,7 +3,7 @@ param region string = 'eus2'
 param environment string = 'dev'
 param suffix string = 'cms'
 @description('The name of the SQL logical server.')
-param serverName string = 'sql-eus2-dev-cms'
+param serverName string = 'sql-${region}-${environment}-${suffix}'
 
 @description('The name of the SQL Database.')
 param sqlDBName string = 'sql-db01-${region}-${environment}-${suffix}'
