@@ -16,7 +16,7 @@ var subnets = [
 
 
 resource vnet 'Microsoft.Network/virtualNetworks@2021-08-01' = {
-  name: 'vnet-${region}-${environment}-stdnt-${suffix}'
+  name: 'vnet-${region}-${environment}-${suffix}'
   location: location
   properties: {
     addressSpace: {
