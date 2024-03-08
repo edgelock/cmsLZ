@@ -6,27 +6,31 @@ param suffix string = 'cms'
 var subnets = [
   {
     name: 'AzureBastionSubnet'
-    subnetPrefix: '10.205.0.128/26'
+    subnetPrefix: '10.5.0.64/26'
   }
   {
     name: 'GatewaySubnet'
-    subnetPrefix: '10.205.0.0/27'
+    subnetPrefix: '10.5.0.0/26'
   }
   {
     name: 'snet-${region}-${environment}-${suffix}-trust'
-    subnetPrefix: '10.205.0.1/27'
+    subnetPrefix: '10.5.0.208/28'
   }
   {
     name: 'snet-${region}-${environment}-${suffix}-mgmt'
-    subnetPrefix: '10.205.0.2/27'
+    subnetPrefix: '10.5.0.224/28'
   }
   {
     name: 'snet-${region}-${environment}-${suffix}-untrust'
-    subnetPrefix: '10.205.0.3/27'
+    subnetPrefix: '10.5.0.192/28'
   }
   {
     name: 'snet-${region}-${environment}-${suffix}-ha'
-    subnetPrefix: '10.205.0.4/27'
+    subnetPrefix: '10.5.0.240/28'
+  }
+  {
+    name: 'snet-${region}-${environment}-${suffix}-pe'
+    subnetPrefix: '10.5.1.16/28'
   }
 ]
 
@@ -37,7 +41,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2021-08-01' = {
   properties: {
     addressSpace: {
       addressPrefixes: [
-        '10.205.0.0/24'
+        '10.5.0.0/21'
       ]
     }
     subnets: [for subnet in subnets: {
@@ -49,17 +53,17 @@ resource vnet 'Microsoft.Network/virtualNetworks@2021-08-01' = {
   }
 }
 
-var nsgs = [
-  {
-    name: 'az-res-prd-afw-nsg01'
-  }
+// var nsgs = [
+//   {
+//     name: 'az-res-prd-afw-nsg01'
+//   }
 
-]
+// ]
 
-resource nsg 'Microsoft.Network/networkSecurityGroups@2021-05-01' = [for nsgs in nsgs: {
-  name: nsgs.name
-  location: location
-  properties: {
-    securityRules: []
-  }   
-}]
+// resource nsg 'Microsoft.Network/networkSecurityGroups@2021-05-01' = [for nsgs in nsgs: {
+//   name: nsgs.name
+//   location: location
+//   properties: {
+//     securityRules: []
+//   }   
+// }]
