@@ -7,6 +7,7 @@ param suffix string = 'cms'
 resource prdKeyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
   location: location
   name: 'kv-${region}-${environment}-${suffix}'
+  
   properties: {
     sku: {
       family: 'A'
