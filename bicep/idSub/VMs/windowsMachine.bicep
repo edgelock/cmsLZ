@@ -1,18 +1,18 @@
 param location string = resourceGroup().location
 param region string = 'eus2'
-param environment string = 'hub'
+param environment string = 'id'
 param suffix string = 'cms'
-param num string = '01'
+param num string = '02'
 param networkInterfaceName string = 'nic-${region}-${environment}-${suffix}${num}'
 param enableAcceleratedNetworking bool = false
-param subnetName string = 'snet-${region}-${environment}-${suffix}-mgmt'
-param virtualNetworkId string = '/subscriptions/78326d70-c78b-41e9-a719-410a5a8bfd38/resourceGroups/rg-eus2-hub-nw/providers/Microsoft.Network/virtualNetworks/vnet-eus2-hub-cms'
+param subnetName string = 'snet-${region}-${environment}-ad'
+param virtualNetworkId string = '/subscriptions/a09a8713-400d-40cb-bcb3-65f2251e91da/resourceGroups/rg-eus2-id-nw/providers/Microsoft.Network/virtualNetworks/vnet-eus2-id-nw'
 param virtualMachineName string = 'vm-${region}-${environment}-${suffix}'
 param virtualMachineComputerName string ='vm${region}${environment}-${suffix}'
 param virtualMachineRG string = 'hubuse2rg'
 param osDiskType string = 'Standard_LRS'
 param osDiskDeleteOption string = 'Delete'
-param virtualMachineSize string = 'Standard_D2s_v3'
+param virtualMachineSize string = 'Standard_D2s_v5'
 param nicDeleteOption string = 'Delete'
 param adminUsername string = 'cmsadmin'
 
