@@ -1,8 +1,8 @@
 param location string = resourceGroup().location
 param region string = 'eus2'
-param environment string = 'dev'
+param environment string = 'uat'
 param suffix string = 'cms'
-param storageAccountName string = 'st${region}${environment}${suffix}001'
+param storageAccountName string = 'adl${region}${environment}${suffix}med'
 
 resource flowlogStorageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: storageAccountName
