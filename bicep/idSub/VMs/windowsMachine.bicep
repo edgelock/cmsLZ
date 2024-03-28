@@ -99,5 +99,30 @@ resource virtualMachine 'Microsoft.Compute/virtualMachines@2022-03-01' = {
   }
 }
 
+resource symbolicname 'Microsoft.Compute/availabilitySets@2023-09-01' = {
+  name: 'string'
+  location: 'string'
+  tags: {
+    tagName1: 'tagValue1'
+    tagName2: 'tagValue2'
+  }
+  sku: {
+    capacity: int
+    name: 'string'
+    tier: 'string'
+  }
+  properties: {
+    platformFaultDomainCount: 5
+    platformUpdateDomainCount: 2
+    proximityPlacementGroup: {
+      id: 'string'
+    }
+    virtualMachines: [
+      {
+        id: 'string'
+      }
+    ]
+  }
+}
 output adminUsername string = adminUsername
 

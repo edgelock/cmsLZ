@@ -1,30 +1,26 @@
 param location string = resourceGroup().location
 param region string = 'eus2'
-param environment string = 'id'
-param suffix string = 'domain'
+param environment string = 'uat'
+param suffix string = 'data'
 var subnets = [
   {
-    name: 'snet-${region}-${environment}-ad-${suffix}1'
-    subnetPrefix: '10.5.32.0/28'
+    name: 'snet-${region}-${environment}-${suffix}-pe'
+    subnetPrefix: '10.5.16.0/27'
   }
   {
-    name: 'snet-${region}-${environment}-ad-${suffix}2'
-    subnetPrefix: '10.5.32.16/28'
-  }
-  {
-    name: 'snet-${region}-${environment}-ad-${suffix}3'
-    subnetPrefix: '10.5.32.32/28'
+    name: 'snet-${region}-${environment}-${suffix}-mgmt'
+    subnetPrefix: '10.5.16.32/27'
   }
 ]
 
 
 resource vnet 'Microsoft.Network/virtualNetworks@2021-08-01' = {
-  name: 'vnet-${region}-${environment}-nw'
+  name: 'vnet-${region}-${environment}-data'
   location: location
   properties: {
     addressSpace: {
       addressPrefixes: [
-        '10.5.32.0/24'
+        '10.5.16.0/24'
       ]
     }
     subnets: [for subnet in subnets: {
