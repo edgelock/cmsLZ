@@ -1,7 +1,7 @@
 //Peer from prd to hub
 param vNetName string = 'vnet-eus2-hub-cms'
-param remoteVNetName string = 'vnet-eus2-id-nw'
-param remoteVNetID string = '/subscriptions/a09a8713-400d-40cb-bcb3-65f2251e91da/resourceGroups/rg-eus2-id-nw/providers/Microsoft.Network/virtualNetworks/vnet-eus2-id-nw'
+param remoteVNetName string = 'vnet-eus2-uat-data'
+param remoteVNetID string = '/subscriptions/9b3da0ac-e975-4e7c-88bf-3fc4c25cfba2/resourceGroups/rg-eus2-uat-nw/providers/Microsoft.Network/virtualNetworks/vnet-eus2-uat-data'
 param allowGatewayTransit bool = true
 param useRemoteGateways bool = false
 param allowForwardedTraffic bool = true

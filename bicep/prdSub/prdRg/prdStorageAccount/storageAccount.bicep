@@ -1,6 +1,6 @@
 param location string = resourceGroup().location
 param region string = 'eus2'
-param environment string = 'dev'
+param environment string = 'prd'
 param suffix string = 'data'
 param storageAccountName string = 'st${region}${environment}raw${suffix}'
 
